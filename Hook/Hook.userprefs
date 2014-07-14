@@ -1,0 +1,35 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../Console/Program.cs">
+    <Files>
+      <File FileName="Client.cs" Line="73" Column="22" />
+      <File FileName="Auth.cs" Line="16" Column="16" />
+      <File FileName="System.cs" Line="8" Column="3" />
+      <File FileName="../tests/CollectionTest.cs" Line="16" Column="4" />
+      <File FileName="KeyValue.cs" Line="16" Column="4" />
+      <File FileName="Request.cs" Line="14" Column="4" />
+      <File FileName="Collection.cs" Line="235" Column="11" />
+      <File FileName="../Console/Program.cs" Line="21" Column="2" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True" selected="True">
+          <Node name="Console" expanded="True" />
+          <Node name="Hook" expanded="True">
+            <Node name="Packages" expanded="True" />
+          </Node>
+          <Node name="Tests" expanded="True">
+            <Node name="References" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
