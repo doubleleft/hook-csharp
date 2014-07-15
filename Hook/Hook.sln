@@ -5,28 +5,43 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hook", "Hook.csproj", "{C30
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "..\tests\Tests.csproj", "{B5618B23-A692-4B3F-B90F-DDB430A89484}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "..\Console\ConsoleTest.csproj", "{65AD802A-ED3A-4644-AB0E-851DCB224A8E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples", "Examples\Examples.csproj", "{F8E1C1EB-E84F-4EA5-AD70-50ADF7121D80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wat", "Wat\Wat.csproj", "{8303644F-9B61-44D1-B4E3-67CE009CA9D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
 		Release|x86 = Release|x86
+		AppStore|Any CPU = AppStore|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{65AD802A-ED3A-4644-AB0E-851DCB224A8E}.Debug|x86.ActiveCfg = Debug|x86
-		{65AD802A-ED3A-4644-AB0E-851DCB224A8E}.Debug|x86.Build.0 = Debug|x86
-		{65AD802A-ED3A-4644-AB0E-851DCB224A8E}.Release|x86.ActiveCfg = Release|x86
-		{65AD802A-ED3A-4644-AB0E-851DCB224A8E}.Release|x86.Build.0 = Release|x86
+		{8303644F-9B61-44D1-B4E3-67CE009CA9D1}.AppStore|Any CPU.ActiveCfg = AppStore|Any CPU
+		{8303644F-9B61-44D1-B4E3-67CE009CA9D1}.AppStore|Any CPU.Build.0 = AppStore|Any CPU
+		{8303644F-9B61-44D1-B4E3-67CE009CA9D1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8303644F-9B61-44D1-B4E3-67CE009CA9D1}.Debug|x86.Build.0 = Debug|Any CPU
+		{8303644F-9B61-44D1-B4E3-67CE009CA9D1}.Release|x86.ActiveCfg = Release|Any CPU
+		{8303644F-9B61-44D1-B4E3-67CE009CA9D1}.Release|x86.Build.0 = Release|Any CPU
+		{B5618B23-A692-4B3F-B90F-DDB430A89484}.AppStore|Any CPU.ActiveCfg = Debug|x86
+		{B5618B23-A692-4B3F-B90F-DDB430A89484}.AppStore|Any CPU.Build.0 = Debug|x86
 		{B5618B23-A692-4B3F-B90F-DDB430A89484}.Debug|x86.ActiveCfg = Debug|x86
 		{B5618B23-A692-4B3F-B90F-DDB430A89484}.Debug|x86.Build.0 = Debug|x86
 		{B5618B23-A692-4B3F-B90F-DDB430A89484}.Release|x86.ActiveCfg = Release|x86
 		{B5618B23-A692-4B3F-B90F-DDB430A89484}.Release|x86.Build.0 = Release|x86
+		{C3058BDC-5E03-41DD-B43C-95A0E12F56EE}.AppStore|Any CPU.ActiveCfg = Debug|x86
+		{C3058BDC-5E03-41DD-B43C-95A0E12F56EE}.AppStore|Any CPU.Build.0 = Debug|x86
 		{C3058BDC-5E03-41DD-B43C-95A0E12F56EE}.Debug|x86.ActiveCfg = Debug|x86
 		{C3058BDC-5E03-41DD-B43C-95A0E12F56EE}.Debug|x86.Build.0 = Debug|x86
 		{C3058BDC-5E03-41DD-B43C-95A0E12F56EE}.Release|x86.ActiveCfg = Release|x86
 		{C3058BDC-5E03-41DD-B43C-95A0E12F56EE}.Release|x86.Build.0 = Release|x86
+		{F8E1C1EB-E84F-4EA5-AD70-50ADF7121D80}.AppStore|Any CPU.ActiveCfg = AppStore|Any CPU
+		{F8E1C1EB-E84F-4EA5-AD70-50ADF7121D80}.AppStore|Any CPU.Build.0 = AppStore|Any CPU
+		{F8E1C1EB-E84F-4EA5-AD70-50ADF7121D80}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F8E1C1EB-E84F-4EA5-AD70-50ADF7121D80}.Debug|x86.Build.0 = Debug|Any CPU
+		{F8E1C1EB-E84F-4EA5-AD70-50ADF7121D80}.Release|x86.ActiveCfg = Release|Any CPU
+		{F8E1C1EB-E84F-4EA5-AD70-50ADF7121D80}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = ..\Console\ConsoleTest.csproj
+		StartupItem = Examples\Examples.csproj
 	EndGlobalSection
 EndGlobal

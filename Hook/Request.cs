@@ -2,6 +2,7 @@
 using System.Net;
 
 using RestSharp;
+using Newtonsoft.Json;
 
 namespace Hook
 {
@@ -16,9 +17,16 @@ namespace Hook
 			this.request = request;
 		}
 
-		public RestRequestAsyncHandle OnSuccess(Action<IRestResponse> callback)
+		public RestRequestAsyncHandle ContinueWith(Action<Object> callback)
 		{
-			return this.client.ExecuteAsync(this.request, callback);
+			return this.client.ExecuteAsync(this.request, response => {
+				Object data = JsonConvert.DeserializeObject(response.Content);
+				if (response.StatusCode != HttpStatusCode.OK) {
+					throw new Exception(response.StatusCode.ToString()); // data["error"].Value
+				} else {
+					callback(data);
+				}
+			});
 		}
 
 		protected void OnCompleted(object sender, EventArgs e)

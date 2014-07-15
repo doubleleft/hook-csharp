@@ -2,7 +2,7 @@
 using System.Net;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using Newtonsoft.Json;
+
 using RestSharp;
 
 namespace Hook
@@ -79,11 +79,6 @@ namespace Hook
 			}
 
 			return dict;
-		}
-
-		protected string GetPayload(string method, Object data)
-		{
-			return JsonConvert.SerializeObject (data);
 		}
 
 	}
