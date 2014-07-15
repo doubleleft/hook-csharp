@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -77,6 +77,8 @@ namespace Hook
 			if (authToken != null) {
 				dict.Add ("X-Auth-Token", authToken);
 			}
+
+			dict.Add ("User-Agent", "hook-csharp");
 
 			return dict;
 		}
