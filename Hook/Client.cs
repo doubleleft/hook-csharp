@@ -27,9 +27,14 @@ namespace Hook
 
 		}
 
-		public Collection Collection(String name)
+		public Collection Collection(string name)
 		{
 			return new Collection (this, name);
+		}
+
+		public Channel Channel(string name)
+		{
+			return new WebSocket (this, name);
 		}
 
 		public Request Get(string segments, Object data)

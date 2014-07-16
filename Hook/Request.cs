@@ -22,7 +22,7 @@ namespace Hook
 			return this.client.ExecuteAsync(this.request, response => {
 				Object data = JsonConvert.DeserializeObject(response.Content);
 				if (response.StatusCode != HttpStatusCode.OK) {
-					throw new Exception(response.StatusCode.ToString()); // data["error"].Value
+					throw new Exception(response.ErrorMessage);
 				} else {
 					callback(data);
 				}
