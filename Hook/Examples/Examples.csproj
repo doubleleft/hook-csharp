@@ -32,13 +32,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <LinkMode>Full</LinkMode>
     <UseSGen>false</UseSGen>
-    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
     <EnablePackageSigning>false</EnablePackageSigning>
-    <CodeSigningKey>Developer ID Application</CodeSigningKey>
-    <EnableCodeSigning>true</EnableCodeSigning>
-    <CreatePackage>true</CreatePackage>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|AnyCPU' ">
     <DebugType>full</DebugType>

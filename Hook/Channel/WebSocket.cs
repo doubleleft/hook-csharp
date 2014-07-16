@@ -8,7 +8,7 @@ namespace Hook
 
 		public WebSocket (Client client, string name) : base(client, name)
 		{
-			this.socket = new WebSocketSharp.WebSocket ();
+			this.socket = new WebSocketSharp.WebSocket (client.GetUrl());
 		}
 	}
 }

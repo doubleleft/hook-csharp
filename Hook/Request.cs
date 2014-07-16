@@ -2,7 +2,9 @@
 using System.Net;
 
 using RestSharp;
-using Newtonsoft.Json;
+
+using JsonFx.Serialization;
+using JsonFx.Json;
 
 namespace Hook
 {
@@ -17,10 +19,13 @@ namespace Hook
 			this.request = request;
 		}
 
-		public RestRequestAsyncHandle ContinueWith(Action<Object> callback)
+		public RestRequestAsyncHandle ContinueWith<TResult>(Action<TResult> callback)
 		{
 			return this.client.ExecuteAsync(this.request, response => {
-				Object data = JsonConvert.DeserializeObject(response.Content);
+				var settings = new DataReaderSettings ();
+				var reader = new JsonReader (settings);
+				var data = reader.Read<TResult>(response.Content);
+
 				if (response.StatusCode != HttpStatusCode.OK) {
 					throw new Exception(response.ErrorMessage);
 				} else {

@@ -27,6 +27,11 @@ namespace Hook
 
 		}
 
+		public string GetUrl()
+		{
+			return this.rest.BaseUrl;
+		}
+
 		public Collection Collection(string name)
 		{
 			return new Collection (this, name);

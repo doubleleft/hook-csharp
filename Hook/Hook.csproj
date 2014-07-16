@@ -38,7 +38,6 @@
     <Compile Include="KeyValue.cs" />
     <Compile Include="Request.cs" />
     <Compile Include="Channel\WebSocket.cs" />
-    <Compile Include="Channel\SSE.cs" />
     <Compile Include="Channel\Channel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -47,11 +46,11 @@
     <Reference Include="RestSharp">
       <HintPath>packages\RestSharp.104.4.0\lib\net35\RestSharp.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>packages\Newtonsoft.Json.6.0.3\lib\net35\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="websocket-sharp">
       <HintPath>packages\WebSocketSharp.1.0.3-rc4\lib\websocket-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="JsonFx">
+      <HintPath>packages\JsonFx.2.0.1209.2802\lib\net35\JsonFx.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

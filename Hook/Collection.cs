@@ -14,7 +14,7 @@ namespace Hook
 		protected Dictionary<string, Object> options;
 		protected List<Object[]> wheres;
 		protected List<string[]> ordering;
-		protected string[] _group;
+		protected List<string> _group;
 		protected Object _limit;
 		protected Object _offset;
 		protected Object _remember;
@@ -33,7 +33,7 @@ namespace Hook
 			this.segments = "collection/" + this.name;
 		}
 
-		protected Request get()
+		public Request Get()
 		{
 			return this.client.Get (this.segments, this.BuildQuery ());
 		}
@@ -43,7 +43,7 @@ namespace Hook
 			this.options = new Dictionary<string, Object>();
 			this.wheres = new List<Object[]>();
 			this.ordering = new List<string[]>();
-			this._group = null;
+			this._group = new List<string>();
 			this._limit = null;
 			this._offset = null;
 			this._remember = null;
@@ -69,7 +69,7 @@ namespace Hook
 			}
 
 			// apply group
-			if (this._group.Length > 0) {
+			if (this._group.Count > 0) {
 				query["g"] = this._group;
 			}
 
@@ -126,44 +126,46 @@ namespace Hook
 
 		public Collection Group(params string[] relation)
 		{
-			this._group = relation;
+			foreach (var r in relation) {
+				this._group.Add (r);
+			}
 			return this;
 		}
 
 		public Request Count()
 		{
 			this.options["aggregation"] = new { method = "count", field = "" };
-			return this.get ();
+			return this.Get ();
 		}
 
 		public Request Max(string field)
 		{
 			this.options["aggregation"] = new {method = "max", field = field};
-			return this.get ();
+			return this.Get ();
 		}
 
 		public Request Min(string field)
 		{
 			this.options["aggregation"] = new {method = "min", field = field};
-			return this.get ();
+			return this.Get ();
 		}
 
 		public Request Avg(string field)
 		{
 			this.options["aggregation"] = new {method = "avg", field = field};
-			return this.get ();
+			return this.Get ();
 		}
 
 		public Request Sum(string field)
 		{
 			this.options["aggregation"] = new {method = "sum", field = field};
-			return this.get ();
+			return this.Get ();
 		}
 
 		public Request First()
 		{
 			this.options ["first"] = true;
-			return this.get ();
+			return this.Get ();
 		}
 
 		public Request FirstOrCreate(Object data)
