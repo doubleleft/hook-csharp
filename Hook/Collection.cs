@@ -151,9 +151,9 @@ namespace Hook
 			return this;
 		}
 
-		public Request Count()
+		public Request Count(string field = "*")
 		{
-			this.options["aggregation"] = new { method = "count", field = "" };
+			this.options["aggregation"] = new { method = "count", field = field };
 			return this.Get ();
 		}
 
