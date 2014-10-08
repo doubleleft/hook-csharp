@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 
@@ -77,7 +77,10 @@ namespace Hook
 				{"paginate", "p"},
 				{"first", "f"},
 				{"aggregation", "aggr"},
-				{"operation", "op"}
+				{"operation", "op"},
+				{"data", "data"},
+				{"with", "with"},
+				{"select", "select"}
 			};
 
 			foreach (var f in shortnames) {
@@ -92,9 +95,9 @@ namespace Hook
 			return query;
 		}
 
-		protected Collection AddWhere(string field, string operation, Object value)
+		protected Collection AddWhere(string field, string operation, Object value, string boolean = "and")
 		{
-			this.wheres.Add (new [] { field, operation, value });
+			this.wheres.Add (new [] { field, operation, value, boolean });
 			return this;
 		}
 
@@ -113,9 +116,25 @@ namespace Hook
 			return this.AddWhere (field, operation, value);
 		}
 
+		public Collection OrWhere(string field, Object value)
+		{
+			return this.AddWhere (field, "=", value, "or");
+		}
+
+		public Collection OrWhere(string field, string operation, Object value)
+		{
+			return this.AddWhere (field, operation, value, "or");
+		}
+
 		public Request Find(Object _id)
 		{
 			return this.client.Get (this.segments + "/" + _id.ToString (), this.BuildQuery());
+		}
+
+		public Collection With(params string[] fields)
+		{
+			this.options ["select"] = fields;
+			return this;
 		}
 
 		public Collection With(params string[] relation)
@@ -132,9 +151,9 @@ namespace Hook
 			return this;
 		}
 
-		public Request Count()
+		public Request Count(string field = "*")
 		{
-			this.options["aggregation"] = new { method = "count", field = "" };
+			this.options["aggregation"] = new { method = "count", field = field };
 			return this.Get ();
 		}
 
@@ -224,7 +243,7 @@ namespace Hook
 			this.options ["operation"] = new { method = "increment", field = field, value = value };
 			return this.client.Put(this.segments, this.BuildQuery());
 		}
-			
+
 		public Request Decrement(string field, int value = 1)
 		{
 			this.options ["operation"] = new { method = "decrement", field = field, value = value };
