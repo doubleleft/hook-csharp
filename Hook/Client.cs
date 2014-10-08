@@ -9,12 +9,24 @@ namespace Hook
 {
 	public class Client
 	{
+		protected static Client instance;
+
 		protected String appId;
 		protected String key;
 		protected RestClient rest;
 
 		public System System;
 		public Auth Auth;
+
+		public static void Setup(string appId, string key, string url)
+		{
+			Client.instance = new Client (appId, key, url);
+		}
+
+		public static Client GetInstance()
+		{
+			return instance;
+		}
 
 		public Client (string appId, string key, string url)
 		{

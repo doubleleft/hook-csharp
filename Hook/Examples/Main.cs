@@ -7,7 +7,7 @@ using MonoMac.ObjCRuntime;
 using Hook;
 using RestSharp;
 
-class Post {
+class Post : Hook.Model {
 	public string title;
 	public int score;
 	public DateTime date;
@@ -22,11 +22,12 @@ namespace Examples
 			Client client = new Client("1", "cc36d8ba02a293d7842a6a7028d16819", "http://hook.dev/index.php/");
 			Collection posts = client.Collection ("posts");
 
-			posts.Create (new {
-				title = "Hello there!",
-				score = 15,
-				date = new DateTime(2014, 07, 07, 17, 30, 0)
-			}).ContinueWith<Post> (result => {
+			var post = new Post ();
+			post.title = "Hello there!";
+			post.score = 15;
+			post.date = new DateTime (2014, 07, 07, 17, 30, 0);
+
+			posts.Create (post).ContinueWith<Post> (result => {
 				Console.WriteLine(result.ToString());
 			});
 

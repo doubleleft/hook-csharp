@@ -39,6 +39,7 @@
     <Compile Include="Request.cs" />
     <Compile Include="Channel\WebSocket.cs" />
     <Compile Include="Channel\Channel.cs" />
+    <Compile Include="Model.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net" />

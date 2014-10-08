@@ -1,21 +1,21 @@
 ﻿<Properties MonoDevelop.MonoMac.LastXamMacNagTime="16/07/2014 01:05:18">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Request.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Client.cs">
     <Files>
-      <File FileName="Client.cs" Line="32" Column="28" />
-      <File FileName="Auth.cs" Line="16" Column="16" />
-      <File FileName="System.cs" Line="15" Column="1" />
-      <File FileName="Examples/Main.cs" Line="7" Column="12" />
-      <File FileName="Examples/AppDelegate.cs" Line="13" Column="24" />
-      <File FileName="Examples/MainWindow.cs" Line="14" Column="1" />
-      <File FileName="Request.cs" Line="22" Column="63" />
-      <File FileName="Channel/WebSocket.cs" Line="11" Column="61" />
+      <File FileName="Examples/Main.cs" Line="13" Column="23" />
+      <File FileName="Collection.cs" Line="169" Column="4" />
+      <File FileName="Model.cs" Line="25" Column="51" />
+      <File FileName="Client.cs" Line="24" Column="4" />
+      <File FileName="Request.cs" Line="25" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="Hook" expanded="True" selected="True">
+          <Node name="Examples" expanded="True">
             <Node name="Packages" expanded="True" />
+          </Node>
+          <Node name="Hook" expanded="True">
+            <Node name="Client.cs" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -33,6 +33,8 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/endel/Projects/hook-csharp/Console/Program.cs" line="16" column="7" />
+      <Breakpoint file="/Users/endel/Projects/hook-csharp/Hook/Examples/Main.cs" line="31" column="1" />
+      <Breakpoint file="/Users/endel/Projects/hook-csharp/Hook/Examples/Main.cs" line="35" column="42" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

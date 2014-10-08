@@ -13,10 +13,20 @@ namespace Hook
 		public RestClient client;
 		public RestRequest request;
 
+		protected object resultType = null;
+
 		public Request (RestClient client, RestRequest request)
 		{
 			this.client = client;
 			this.request = request;
+		}
+
+		public RestRequestAsyncHandle ContinueWith(Action<object> callback)
+		{
+			if (this.resultType == null) {
+				throw new Exception ("Please use `ContinueWith<TResult>(callback)`.");
+			}
+			return ContinueWith<this.resultType> (callback);
 		}
 
 		public RestRequestAsyncHandle ContinueWith<TResult>(Action<TResult> callback)
