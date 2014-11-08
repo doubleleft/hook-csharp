@@ -3,6 +3,11 @@ hook-c#
 
 C# client for [hook](https://github.com/doubleleft/hook).
 
+Support .NET 2.0+/Unity3d.
+
+- [Usage example](Hook/Examples/Main.cs#L20)
+- [NuGet Package](https://www.nuget.org/packages/hook-csharp/)
+
 TODO
 ---
 

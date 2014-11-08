@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>hook-csharp</id>
+    <version>1.0.0</version>
+    <authors>endel</authors>
+    <owners>endel</owners>
+    <licenseUrl>https://github.com/doubleleft/hook-csharp/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/doubleleft/hook-csharp</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>C# client for hook</description>
+    <releaseNotes>First release.</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>hook client</tags>
+    <dependencies>
+      <dependency id="JsonFx" version="2.0.1209.2802" />
+      <dependency id="RestSharp" version="104.4.0" />
+    </dependencies>
+  </metadata>
+</package>
