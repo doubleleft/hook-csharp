@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net;
 
 using RestSharp;
@@ -13,7 +13,7 @@ namespace Hook
 		public RestClient client;
 		public RestRequest request;
 
-		protected object resultType = null;
+//		protected object resultType = null;
 
 		public Request (RestClient client, RestRequest request)
 		{
@@ -21,13 +21,13 @@ namespace Hook
 			this.request = request;
 		}
 
-		public RestRequestAsyncHandle ContinueWith(Action<object> callback)
-		{
-			if (this.resultType == null) {
-				throw new Exception ("Please use `ContinueWith<TResult>(callback)`.");
-			}
-			return ContinueWith<this.resultType> (callback);
-		}
+//		public RestRequestAsyncHandle ContinueWith(Action<object> callback)
+//		{
+//			if (this.resultType == null) {
+//				throw new Exception ("Please use `ContinueWith<TResult>(callback)`.");
+//			}
+//			return ContinueWith<this.resultType> (callback);
+//		}
 
 		public RestRequestAsyncHandle ContinueWith<TResult>(Action<TResult> callback)
 		{
