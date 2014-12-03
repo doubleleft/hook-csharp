@@ -131,7 +131,7 @@ namespace Hook
 			return this.client.Get (this.segments + "/" + _id.ToString (), this.BuildQuery());
 		}
 
-		public Collection With(params string[] fields)
+		public Collection Select(params string[] fields)
 		{
 			this.options ["select"] = fields;
 			return this;
