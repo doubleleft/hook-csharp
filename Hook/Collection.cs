@@ -2,8 +2,12 @@ using System;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 
+using RestSharp;
+
 namespace Hook
 {
+	public enum Order { ASCENDING, DESCENDING };
+
 	public class Collection
 	{
 		protected Client client;
@@ -36,6 +40,11 @@ namespace Hook
 		public Request Get()
 		{
 			return this.client.Get (this.segments, this.BuildQuery ());
+		}
+			
+		public RestRequestAsyncHandle ContinueWith<TResult>(Action<TResult> callback)
+		{
+			return this.Get ().ContinueWith<TResult> (callback);
 		}
 
 		protected void Reset()
@@ -194,15 +203,10 @@ namespace Hook
 			return this.client.Post (this.segments, this.BuildQuery ());
 		}
 
-		public Collection Sort(string field, Object direction = null)
+		public Collection Sort(string field, Order direction = Order.ASCENDING)
 		{
-			int _direction = 0;
-			int.TryParse ((string)direction, out _direction);
-			if (_direction != 0) {
-				direction = ((int)direction == 1) ? "asc" : "desc";
-			}
-
-			this.ordering.Add (new [] { field, direction.ToString ().ToLower () });
+			string dir = (direction == Order.ASCENDING) ? "asc" : "desc";
+			this.ordering.Add (new [] { field, dir });
 			return this;
 		}
 

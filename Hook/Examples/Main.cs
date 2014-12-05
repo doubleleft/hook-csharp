@@ -7,7 +7,8 @@ using MonoMac.ObjCRuntime;
 using Hook;
 using RestSharp;
 
-class Post : Hook.Model {
+class Post {
+	public int _id;
 	public string title;
 	public int score;
 	public DateTime date;
@@ -17,9 +18,10 @@ namespace Examples
 {
 	class MainClass
 	{
+		private static RestRequestAsyncHandle req;
 		static void Main (string[] args)
 		{
-			Client client = new Client("1", "cc36d8ba02a293d7842a6a7028d16819", "http://hook.dev/index.php/");
+			Client client = new Client("2", "a18632aa82be8e925ef349164314311a", "http://hook.dev/public/index.php/");
 			Collection posts = client.Collection ("posts");
 
 			var post = new Post ();
@@ -33,6 +35,11 @@ namespace Examples
 
 			posts.Get ().ContinueWith<Post[]> (result => {
 				Console.WriteLine(result.ToString());
+			});
+
+			req = posts.Sort ("created_at", Order.DESCENDING).Limit(1).First().ContinueWith<Post> (data => {
+				Console.WriteLine("Post id: ");
+				Console.WriteLine(data._id);
 			});
 
 			NSApplication.Init ();

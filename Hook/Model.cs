@@ -6,26 +6,25 @@ using System.Reflection;
 
 namespace Hook
 {
-	public class Model : Collection
+	public class Model
 	{
 
-		public Model (object attributes = null) : base(Client.GetInstance (), this.GetType ().Name.ToLower ()) {
+		public Model (object attributes = null) {
 			if (attributes != null) {
 				this.SetAttributes (attributes);
 			}
 		}
 
-		public static Request Create(object data = null)
-		{
-			Model instance = Activator.CreateInstance (this.GetType (), data);
-			instance.Create ();
+//		public static Request Create(object data = null)
+//		{
+//			Model instance = Activator.CreateInstance (this.GetType (), data);
+//			instance.Create ();
+//		}
 
-		}
-
-		public Request Create()
-		{
-			return base.Create (this.GetAttributeValues());
-		}
+//		public Request Create()
+//		{
+//			return base.Create (this.GetAttributeValues());
+//		}
 
 		public void SetAttributes(object attributes)
 		{
@@ -44,7 +43,7 @@ namespace Hook
 
 		protected Dictionary<string, object> GetAttributeValues()
 		{
-			Dictionary<string, object> data;
+			Dictionary<string, object> data = new Dictionary<string, object>();
 
 			foreach (var property in this.GetAttributes())
 			{
@@ -57,4 +56,3 @@ namespace Hook
 
 	}
 }
-

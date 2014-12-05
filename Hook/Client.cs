@@ -84,7 +84,13 @@ namespace Hook
 
 			// Always exchange data using JSON
 			request.RequestFormat = DataFormat.Json;
-			request.AddBody (data);
+
+			if (method == Method.GET) {
+				var writer = new JsonFx.Json.JsonWriter ();
+				request.Resource += "?" + writer.Write (data);
+			} else {
+				request.AddBody (data);
+			}
 
 			return new Request(rest, request);
 		}
